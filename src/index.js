@@ -1,9 +1,6 @@
 import express, { json } from 'express';
 import QuestionRouter from './routes/QuestionRouter.js';
 import questionDbReference from './config/firebase.js';
-import { config } from 'dotenv';
-
-config()
 
 const app = express();
 const port = 3000;
