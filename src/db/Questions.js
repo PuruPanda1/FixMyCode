@@ -17,6 +17,6 @@ export async function addQuestion(question) {
 
 export async function getQuestions(){
     const querySnapshot = await getDocs(questionDbReference);
-    const questions = querySnapshot.docs.map((doc)=>doc.data());
+    const questions = querySnapshot.docs.map((doc)=>({id:doc.id, ...doc.data()}));
     return questions;
 }
