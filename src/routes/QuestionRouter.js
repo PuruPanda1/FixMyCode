@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { addQuestion } from "../db/Questions.js";
+import { addQuestion, getQuestions } from "../db/Questions.js";
 
 const QuestionRouter = Router();
 
-// TODO send all the questions as json array
 QuestionRouter.get('/',async(req,res)=>{
-    res.send({msg:"Success"});
+    const data = await getQuestions();
+    res.send(data);
 })
 
 QuestionRouter.post('/add',async(req,res)=>{
